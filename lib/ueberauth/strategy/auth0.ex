@@ -117,6 +117,15 @@ defmodule Ueberauth.Strategy.Auth0 do
         set_errors!(conn, [error("OAuth2", reason)])
     end
   end
+  
+  def extra(conn) do
+    %Extra{
+      raw_info: %{
+        token: conn.private.auth0_token,
+        user: conn.private.auth0_user
+      }
+    }
+  end
 
   @doc """
   Fetches the uid field from the Auth0 response.
