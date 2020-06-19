@@ -32,7 +32,7 @@ defmodule Ueberauth.Strategy.Auth0 do
 
   alias OAuth2.{Client, Error, Response}
   alias Plug.Conn
-  alias Ueberauth.Auth.{Credentials, Info}
+  alias Ueberauth.Auth.{Credentials, Info, Extra}
 
   @doc """
   Handles the redirect to Auth0.
